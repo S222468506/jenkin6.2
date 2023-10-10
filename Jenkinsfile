@@ -4,44 +4,44 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                // Use a build automation tool like Maven
-                // Example: sh 'mvn clean package'
+                // Build the code using Maven
+                sh 'mvn clean package'
             }
         }
         stage('Unit and Integration Tests') {
             steps {
-                // Use test automation tools for unit and integration tests
-                // Example: sh 'npm test' or 'pytest'
+                // Run unit tests and integration tests using testing tools (e.g., JUnit, TestNG)
+                sh 'mvn test'
             }
         }
         stage('Code Analysis') {
             steps {
-                // Integrate a code analysis tool (e.g., SonarQube)
-                // Example: sh 'sonar-scanner'
+                // Integrate a code analysis tool (e.g., SonarQube) to analyze the code
+                sh 'sonar-scanner'
             }
         }
         stage('Security Scan') {
             steps {
-                // Integrate a security scanning tool (e.g., OWASP ZAP, Snyk)
-                // Example: sh 'zap-cli --scan <target>'
+                // Perform a security scan using a security scanning tool (e.g., OWASP ZAP, Snyk)
+                sh 'zap-cli --scan <target>'
             }
         }
         stage('Deploy to Staging') {
             steps {
-                // Deploy the application to a staging server (e.g., AWS EC2)
-                // Example: sh 'aws deploy <staging-server>'
+                // Deploy the application to a staging server (e.g., AWS EC2) using deployment scripts
+                sh 'deploy-to-staging.sh'
             }
         }
         stage('Integration Tests on Staging') {
             steps {
                 // Run integration tests on the staging environment
-                // Example: sh 'npm test-staging'
+                sh 'npm test-staging'
             }
         }
         stage('Deploy to Production') {
             steps {
-                // Deploy the application to a production server (e.g., AWS EC2)
-                // Example: sh 'aws deploy <production-server>'
+                // Deploy the application to a production server (e.g., AWS EC2) using deployment scripts
+                sh 'deploy-to-production.sh'
             }
         }
     }
@@ -61,4 +61,3 @@ pipeline {
         }
     }
 }
-
