@@ -14,12 +14,12 @@ pipeline {
             }
             post {
                 success {
-                    mail to: 's222311692@deakin.edu.au',
+                    mail to: 's222468506@deakin.edu.au',
                          subject: 'Successful Unit and Integration Tests: ${currentBuild.fullDisplayName}',
                          body: 'Unit and Integration Tests completed successfully. Check the attached logs for more details.'
                 }
                 failure {
-                    mail to: 's222311692@deakin.edu.au',
+                    mail to: 's222468506@deakin.edu.au',
                          subject: 'Failed Unit and Integration Tests: ${currentBuild.fullDisplayName}',
                          body: 'Check the attached logs for more details.'
 
@@ -39,13 +39,13 @@ pipeline {
             }
             post {
                 success {
-                    mail to: 's222311692@deakin.edu.au',
+                    mail to: 's222468506@deakin.edu.au',
                          subject: 'Successful Security Scan: ${currentBuild.fullDisplayName}',
                          body: 'Security Scan completed successfully. Check the attached logs for more details.'
 
                 }
                 failure {
-                    mail to: 's222311692@deakin.edu.au',
+                    mail to: 's222468506@deakin.edu.au',
                          subject: 'Failed Security Scan: ${currentBuild.fullDisplayName}',
                          body: 'Check the attached logs for more details.'
 
